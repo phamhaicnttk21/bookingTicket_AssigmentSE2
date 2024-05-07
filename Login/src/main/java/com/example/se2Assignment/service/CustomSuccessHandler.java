@@ -15,8 +15,8 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         // TODO Auto-generated method stub
 
-        var authourities = authentication.getAuthorities();
-        var roles = authourities.stream().map(r -> r.getAuthority()).findFirst();
+        var authorities = authentication.getAuthorities();
+        var roles = authorities.stream().map(r -> r.getAuthority()).findFirst();
 
         if (roles.orElse("").equals("ADMIN")) {
             response.sendRedirect("/admin-page");
