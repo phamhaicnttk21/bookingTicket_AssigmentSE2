@@ -16,9 +16,8 @@ public class Movies {
     private String rate;
     private String posterUrl;
     private String description;
-    public Movies(long id, String movieName, String genre, String cast, String duration,
+    public Movies(String movieName, String genre, String cast, String duration,
                    String rate, String posterUrl, String description) {
-        this.id = id;
         this.movieName = movieName;
         this.genre = genre;
         this.cast = cast;

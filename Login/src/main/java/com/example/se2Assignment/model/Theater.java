@@ -16,9 +16,9 @@ public class Theater {
     private String vip_section;
     private String description;
 
-    public Theater(long id, String theaterName, String address, String imageUrl,
+    public Theater( String theaterName, String address, String imageUrl,
                    String a_section, String b_section, String vip_section, String description) {
-        this.id = id;
+
         this.theaterName = theaterName;
         this.address = address;
         this.imageUrl = imageUrl;
