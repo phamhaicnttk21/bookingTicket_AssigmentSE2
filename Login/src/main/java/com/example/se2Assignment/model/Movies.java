@@ -9,6 +9,7 @@ public class Movies {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String movieName;
+    private String theaterName;
     private String genre;
     private String cast;
     private String duration;
@@ -16,19 +17,27 @@ public class Movies {
     private String rate;
     private String posterUrl;
     private String description;
-    public Movies(String movieName, String genre, String cast, String duration,
+    public Movies(String movieName, String theaterName,String genre, String cast, String duration,
                    String rate, String posterUrl, String description) {
         this.movieName = movieName;
+        this.theaterName =theaterName;
         this.genre = genre;
         this.cast = cast;
         this.duration = duration;
-
         this.rate = rate;
         this.posterUrl = posterUrl;
         this.description = description;
     }
     public long getId() {
         return id;
+    }
+
+    public String getTheaterName() {
+        return theaterName;
+    }
+
+    public void setTheaterName(String theaterName) {
+        this.theaterName = theaterName;
     }
 
     public void setId(long id) {

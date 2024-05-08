@@ -11,13 +11,13 @@ public class Theater {
     private String theaterName;
     private String address;
     private String imageUrl;
-    private String a_section;
-    private String b_section;
-    private String vip_section;
+    private int a_section;
+    private int b_section;
+    private int vip_section;
     private String description;
 
     public Theater( String theaterName, String address, String imageUrl,
-                   String a_section, String b_section, String vip_section, String description) {
+                   int a_section, int b_section, int vip_section, String description) {
 
         this.theaterName = theaterName;
         this.address = address;
@@ -60,27 +60,27 @@ public class Theater {
         this.imageUrl = imageUrl;
     }
 
-    public String getA_section() {
+    public int getA_section() {
         return a_section;
     }
 
-    public void setA_section(String a_section) {
+    public void setA_section(int  a_section) {
         this.a_section = a_section;
     }
 
-    public String getB_section() {
+    public int getB_section() {
         return b_section;
     }
 
-    public void setB_section(String b_section) {
+    public void setB_section(int b_section) {
         this.b_section = b_section;
     }
 
-    public String getVip_section() {
+    public int getVip_section() {
         return vip_section;
     }
 
-    public void setVip_section(String vip_section) {
+    public void setVip_section(int vip_section) {
         this.vip_section = vip_section;
     }
 
