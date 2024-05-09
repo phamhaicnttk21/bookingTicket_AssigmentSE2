@@ -5,10 +5,11 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "theater")
 public class Theater {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-<<<<<<< HEAD
     private Long id;
+
     private String theaterName;
     private String address;
     private String imageUrl;
@@ -17,6 +18,11 @@ public class Theater {
     private int b_section;
     private int vip_section;
 
+    // Default constructor
+    public Theater() {
+    }
+
+    // Parameterized constructor
     public Theater(String theaterName, String address, String imageUrl, String description, int a_section, int b_section, int vip_section) {
         this.theaterName = theaterName;
         this.address = address;
@@ -26,43 +32,13 @@ public class Theater {
         this.b_section = b_section;
         this.vip_section = vip_section;
     }
-    public Theater(){
 
-    }
-
+    // Getters and Setters
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
-=======
-    private long id;
-    private String theaterName;
-    private String address;
-    private String imageUrl;
-    private int a_section;
-    private int b_section;
-    private int vip_section;
-    private String description;
-
-    public Theater( String theaterName, String address, String imageUrl,
-                   int a_section, int b_section, int vip_section, String description) {
-
-        this.theaterName = theaterName;
-        this.address = address;
-        this.imageUrl = imageUrl;
-        this.a_section = a_section;
-        this.b_section = b_section;
-        this.vip_section = vip_section;
-        this.description = description;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
->>>>>>> c404564894988d53a4d5c4a5a2e557aaa81e7363
         this.id = id;
     }
 
@@ -90,7 +66,6 @@ public class Theater {
         this.imageUrl = imageUrl;
     }
 
-<<<<<<< HEAD
     public String getDescription() {
         return description;
     }
@@ -99,17 +74,11 @@ public class Theater {
         this.description = description;
     }
 
-=======
->>>>>>> c404564894988d53a4d5c4a5a2e557aaa81e7363
     public int getA_section() {
         return a_section;
     }
 
-<<<<<<< HEAD
     public void setA_section(int a_section) {
-=======
-    public void setA_section(int  a_section) {
->>>>>>> c404564894988d53a4d5c4a5a2e557aaa81e7363
         this.a_section = a_section;
     }
 
@@ -128,15 +97,4 @@ public class Theater {
     public void setVip_section(int vip_section) {
         this.vip_section = vip_section;
     }
-<<<<<<< HEAD
-=======
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
->>>>>>> c404564894988d53a4d5c4a5a2e557aaa81e7363
 }
