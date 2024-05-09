@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,31 +29,37 @@
             padding: 20px;
             background-color: #0e2433;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px #ccc;
         }
 
         h2 {
             color: #45b6fe;
         }
-
-        /* Add more styles and components for your dashboard here */
     </style>
 </head>
 <body>
 <div class="header">
     <h1>ADMIN Dashboard</h1>
 </div>
+
 <div class="container">
     <h2>Welcome, [[${user.getFullname()}]]</h2>
 
+    <!-- Image with a link -->
+    <a th:href="@{/theaters}">
+        <img th:src="@{images/theaterFun.jpg}" alt="theater image">
+    </a>
+
+    <a th:href="@{/movies}">
+        <img th:src="@{images/movieFun.jpg}" alt="movie image">
+    </a>
+
+
     <span sec:authorize="isAuthenticated">
         <a th:href="@{/logout}">
-         Logout
-
+            Logout
         </a>
-
-        </span>
-
+    </span>
 </div>
 </body>
 </html>

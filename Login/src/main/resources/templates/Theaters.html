@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Theater List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <style>
+        .thead-dark th {
+            background-color: #343a40; /* Dark background */
+            color: white;
+        }
+        .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+        .table th,
+        .table td {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+        .table-bordered {
+            border: 1px solid #dee2e6;
+        }
+        .table-bordered th,
+        .table-bordered td {
+            border: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid text-center">
+    <div><h2>Theater List</h2></div>
+    <div class="m-2">
+        <a class="h3" th:href="@{/theaters/new}">Add New Theater</a>
+    </div>
+
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Sections A</th>
+                <th>Sections B</th>
+                <th>VIP Sections</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="theater : ${listTheaters}">
+                <tr>
+                    <td>[[${theater.id}]]</td>
+                    <td>[[${theater.theaterName}]]</td>
+                    <td>[[${theater.address}]]</td>
+                    <td>[[${theater.description}]]</td>
+                    <td><img th:src="${theater.imageUrl}" alt="Theater Image" style="width:100px; height:auto;"/></td>
+                    <td>[[${theater.a_section}]]</td>
+                    <td>[[${theater.b_section}]]</td>
+                    <td>[[${theater.vip_section}]]</td>
+                    <td>
+                        <a class="h4 mr-3" th:href="@{'/theaters/edit/' + ${theater.id}}">Edit</a>
+                        <a class="h4" th:href="@{'/theaters/delete/' + ${theater.id}}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>

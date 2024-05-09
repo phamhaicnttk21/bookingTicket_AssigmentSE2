@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Theater List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <style>
+        .thead-dark th {
+            background-color: #343a40; /* Dark background */
+            color: white;
+        }
+        .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+        .table th,
+        .table td {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+        .table-bordered {
+            border: 1px solid #dee2e6;
+        }
+        .table-bordered th,
+        .table-bordered td {
+            border: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid text-center">
+    <div><h2>Movie List</h2></div>
+    <div class="m-2">
+        <a class="h3" th:href="@{/movies/new}">Add New movie</a>
+    </div>
+
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>movie Name</th>
+                <th>genre</th>
+                <th>cast</th>
+                <th>duration</th>
+                <th>rate</th>
+                <th>posterUrl</th>
+                <th>description</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="movie : ${listMovies}">
+                <tr>
+                    <td>[[${movie.id}]]</td>
+                    <td>[[${movie.movieName}]]</td>
+                    <td>[[${movie.genre}]]</td>
+                    <td>[[${movie.cast}]]</td>
+                    <td>[[${movie.duration}]]</td>
+                    <td>[[${movie.rate}]]</td>
+                    <td><img th:src="${movie.posterUrl}" alt="movie Image" style="width:100px; height:auto;"/></td>
+                    <td>[[${movie.description}]]</td>
+                    <td>
+                        <a class="h4 mr-3" th:href="@{'/movies/edit/' + ${movie.id}}">Edit</a>
+                        <a class="h4" th:href="@{'/movies/delete/' + ${movie.id}}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
