@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
+    <title>Home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,9 +14,12 @@
         }
 
         .header {
-            background-color: #45b6fe;
+            background-color: black;
             padding: 20px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            flex-direction: row;  
+            justify-content: space-between;
         }
 
         .header h1 {
@@ -42,17 +45,15 @@
 <body>
 <div class="header">
     <h1>USER Dashboard</h1>
-</div>
-<div class="container">
     <h2>Welcome, [[${user.getFullname()}]]</h2>
-
     <span sec:authorize="isAuthenticated">
         <a th:href="@{/logout}">
          Logout
-
         </a>
-
-        </span>
+    </span>
+</div>
+<div class="container">
+   
 
 </div>
 </body>
