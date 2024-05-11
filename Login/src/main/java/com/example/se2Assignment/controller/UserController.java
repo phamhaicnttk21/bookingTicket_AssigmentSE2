@@ -1,6 +1,8 @@
 package com.example.se2Assignment.controller;
 
 import com.example.se2Assignment.dto.UserDto;
+import com.example.se2Assignment.model.Movie;
+import com.example.se2Assignment.service.MovieService;
 import com.example.se2Assignment.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 public class UserController {
