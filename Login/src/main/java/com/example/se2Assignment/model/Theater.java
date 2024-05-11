@@ -2,6 +2,9 @@ package com.example.se2Assignment.model;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "theater")
 public class Theater {
@@ -17,6 +20,10 @@ public class Theater {
     private int a_section;
     private int b_section;
     private int vip_section;
+    @ManyToMany(mappedBy = "theaters")
+    private Set<Movie> movies = new HashSet<>();
+    @OneToMany(mappedBy = "theater", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<ShowTime> showTimes = new HashSet<>();
 
     // Default constructor
     public Theater() {
@@ -97,4 +104,20 @@ public class Theater {
     public void setVip_section(int vip_section) {
         this.vip_section = vip_section;
     }
+    public Set<Movie> getMovies() {
+        return movies;
+    }
+
+    public void setMovies(Set<Movie> movies) {
+        this.movies = movies;
+    }
+
+    public Set<ShowTime> getShowTimes() {
+        return showTimes;
+    }
+
+    public void setShowTimes(Set<ShowTime> showTimes) {
+        this.showTimes = showTimes;
+    }
+
 }

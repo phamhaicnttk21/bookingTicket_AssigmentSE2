@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -17,14 +18,20 @@ import java.util.List;
 public class TheaterController {
     @Autowired
     private TheaterService service;
-
+    // This is for admin
     @GetMapping("/theaters")
     public String showTheaterList(Model model) {
         List<Theater> listTheaters = service.listAll();
         model.addAttribute("listTheaters", listTheaters);
         return "Theaters";
     }
-
+    // list all theaters for user
+    @GetMapping("/allTheaters")
+    public String showTheaterListForUser(Model model) {
+        List<Theater> listTheaters = service.listAll();
+        model.addAttribute("listTheaters", listTheaters);
+        return "toanBoTheaters";
+    }
     @GetMapping("/theaters/new")
     public String showNewForm(Model model) {
         model.addAttribute("theater", new Theater());
@@ -60,6 +67,13 @@ public class TheaterController {
             ra.addFlashAttribute("message", e.getMessage());
             return "redirect:/theaters";
         }
+    }
+
+    @GetMapping("/theaterDetail")
+    public String showTheaterDetail(@RequestParam("id") Long theaterId, Model model) throws TheaterNotFoundException {
+        Theater theater = service.get(theaterId);
+        model.addAttribute("theater", theater);
+        return "theater-detail";
     }
 }
 

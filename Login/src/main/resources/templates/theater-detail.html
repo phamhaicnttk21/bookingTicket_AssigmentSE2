@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Theater Detail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Thêm CSS tùy chỉnh nếu cần thiết */
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Theater Detail</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <img th:src="${theater.imageUrl}" alt="Theater Image" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <h3 th:text="${theater.theaterName}"></h3>
+            <p><strong>Address:</strong> <span th:text="${theater.address}"></span></p>
+            <p><strong>Description:</strong> <span th:text="${theater.description}"></span></p>
+            <p><strong>A-Section Seats:</strong> <span th:text="${theater.a_section}"></span></p>
+            <p><strong>B-Section Seats:</strong> <span th:text="${theater.b_section}"></span></p>
+            <p><strong>VIP-Section Seats:</strong> <span th:text="${theater.vip_section}"></span></p>
+            <!-- Thêm các trường thông tin khác nếu cần -->
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS và jQuery (cần thiết cho các plugin JS của Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

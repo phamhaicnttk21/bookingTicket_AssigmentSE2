@@ -1,5 +1,6 @@
 package com.example.se2Assignment.service;
 
+import com.example.se2Assignment.model.Movie;
 import com.example.se2Assignment.model.Theater;
 import com.example.se2Assignment.repository.TheaterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +34,6 @@ public class TheaterService {
         }
         throw new TheaterNotFoundException("Could not find any users with ID " + id);
     }
+
+
 }

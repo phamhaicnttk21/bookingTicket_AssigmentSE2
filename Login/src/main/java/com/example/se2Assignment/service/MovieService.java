@@ -34,5 +34,14 @@ public class MovieService {
         }
         throw new MovieNotFoundException("Could not find any movies with ID " + id);
     }
+    public List<Movie> searchMovieByName(String keyword) {
+        return repo.findByMovieNameContainingIgnoreCase(keyword);
+    }
+    public List<String> getAllCategories() {
+        return repo.findAllCategories();
+    }
+    public List<Movie> findByGenre(String genre) {
+        return repo.findByGenre(genre);
+    }
 
 }

@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -62,4 +63,27 @@ public class MovieController {
             return "redirect:/movies";
         }
     }
+    @GetMapping("/search")
+    public String searchMovieByName(@RequestParam("keyword") String keyword, Model model) {
+        List<Movie> movies = service.searchMovieByName(keyword);
+        model.addAttribute("movies", movies);
+        return "search-results";
+    }
+
+    @GetMapping("/showAllCategory")
+    public String showCategories(Model model) {
+        List<String> categories = service.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "film-category";
+    }
+
+    @GetMapping("/showAllCategory/{category}")
+    public String showMoviesByCategory(@PathVariable("category") String category, Model model) {
+        List<Movie> movies = service.findByGenre(category);
+        model.addAttribute("category", category);
+        model.addAttribute("movies", movies);
+        return "movie-list"; // Đây là tên của view hiển thị danh sách phim
+    }
+
+
 }

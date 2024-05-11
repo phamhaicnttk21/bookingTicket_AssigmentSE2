@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <style>
+        /* CSS để thu nhỏ kích thước của ảnh */
+        .poster-image {
+            max-width: 150px; /* Kích thước tối đa của ảnh */
+            height: auto; /* Giữ tỷ lệ khung hình */
+        }
+    </style>
+</head>
+<body>
+<h1>Search Results</h1>
+<div th:if="${movies.empty}">
+    <p>No movies found.</p>
+</div>
+<div th:unless="${movies.empty}">
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Cast</th>
+            <th>Duration</th>
+            <th>Rate</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>cost</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="movie : ${movies}">
+            <td th:text="${movie.movieName}"></td>
+            <td th:text="${movie.genre}"></td>
+            <td th:text="${movie.cast}"></td>
+            <td th:text="${movie.duration}"></td>
+            <td th:text="${movie.rate}"></td>
+            <td><img class="poster-image" th:src="${movie.posterUrl}" alt="Poster"></td>
+            <td th:text="${movie.description}"></td>
+            <td>[[${'$' + movie.baseCost}]]</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

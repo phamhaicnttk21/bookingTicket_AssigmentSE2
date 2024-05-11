@@ -2,6 +2,9 @@ package com.example.se2Assignment.model;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
@@ -14,6 +17,11 @@ public class User {
 
     private String role = "USER"; // Default role is "user"
     private String fullname;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Booking> bookings = new HashSet<>();
+
+
     public User() {
         super();
     }
@@ -63,4 +71,13 @@ public class User {
     public void setFullname(String fullname) {
         this.fullname = fullname;
     }
+    public Set<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(Set<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+
 }
