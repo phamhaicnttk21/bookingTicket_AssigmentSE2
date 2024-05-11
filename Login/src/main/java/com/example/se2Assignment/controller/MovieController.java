@@ -85,5 +85,15 @@ public class MovieController {
         return "movie-list"; // Đây là tên của view hiển thị danh sách phim
     }
 
-
+    @GetMapping("/movie-description/{id}")
+    public String showMovieDescription(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+        try {
+        Movie movie = service.get(id);
+        model.addAttribute("movie", movie);
+            return "movie-description";
+        } catch (MovieNotFoundException e) {
+            ra.addFlashAttribute("message", e.getMessage());
+            return "movie-list";
+        }
+    }
 }
