@@ -95,6 +95,22 @@
         </div>
     </div>
 
+        <div class="container">
+        <h2>Movies</h2>
+        <ul class="movie-list">
+            <li th:each="movie : ${movies}" class="movie-item">
+                <a th:href="@{'/movie-description/' + ${movie.id}}">
+                    <!-- Muốn display thêm gì thì add thêm cái đấy -->
+                    <img th:src="${movie.posterUrl}" alt="Movie Image">
+                    <h3 th:text="${movie.movieName}"></h3>
+                    <p th:text="${movie.genre}"></p>
+                    <p th:text="${movie.rate}"></p>
+                    <p th:text="${movie.baseCost}"></p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
     <div class="browseBody">
         <div class="slide">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
