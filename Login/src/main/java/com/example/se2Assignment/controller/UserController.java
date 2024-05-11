@@ -18,6 +18,8 @@ public class UserController {
     @Autowired
     private UserService userService;
     @Autowired
+    private MovieService movieService;
+    @Autowired
     UserDetailsService userDetailsService;
     @GetMapping("/registration")
     public String getRegistrationPage(@ModelAttribute("user") UserDto userDto){
@@ -41,6 +43,8 @@ public class UserController {
     public String userPage (Model model, Principal principal) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
         model.addAttribute("user", userDetails);
+        List<Movie> movies = movieService.listAll();
+        model.addAttribute("movies", movies);
         return "user";
     }
     @GetMapping("admin-page")
