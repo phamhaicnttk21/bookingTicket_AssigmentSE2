@@ -5,36 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f94a0fb-bb45-4539-92f9-d920ef69fdf1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/ShowTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/repository/ShowTimeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/static/images/classic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/static/images/comedy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/static/images/tam ly xa hoi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/film-category.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/movie-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/search-results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/theater-detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/toanBoTheaters.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/TheaterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/TheaterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Movies.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Theater.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Theater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/repository/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/repository/MovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/repository/MoviesRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/service/MovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/service/TheaterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/service/TheaterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/Movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/Movies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/Theaters.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/Theaters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/movie_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/movie_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/theater_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/theater_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/movie-description.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/movie-description.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +24,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -65,8 +40,17 @@
     "Application.Se2AssignmentApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/CHIEN/Documents/Code_Duong/bookingTicket_AssigmentSE2"
+    "last_opened_file_path": "C:/Users/CHIEN/Documents/Code_Duong/bookingTicket_AssigmentSE2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "034d37bec13f8925a3e9c0187558f098",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -90,7 +74,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715138170212</updated>
+      <workItem from="1715433049415" duration="6996000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
