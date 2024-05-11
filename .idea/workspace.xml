@@ -5,35 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f94a0fb-bb45-4539-92f9-d920ef69fdf1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/ShowTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/repository/ShowTimeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/static/images/classic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/static/images/comedy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/static/images/tam ly xa hoi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/film-category.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/movie-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/search-results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/theater-detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/toanBoTheaters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/TheaterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/TheaterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Movies.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Theater.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Theater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/repository/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/repository/MovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/repository/MoviesRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/service/MovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/service/TheaterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/service/TheaterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/Movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/Movies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/Theaters.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/Theaters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/movie_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/movie_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/theater_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/theater_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/user.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,19 +34,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Se2AssignmentApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/CHIEN/Documents/Code_Duong/bookingTicket_AssigmentSE2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Se2AssignmentApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CHIEN/Documents/Code_Duong/bookingTicket_AssigmentSE2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\CHIEN\Documents\Test-Git\bookingTicket_AssigmentSE2\Login\src\main\resources\static\images" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Se2AssignmentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.se2Assignment.Se2AssignmentApplication" />
+      <module name="se2Assignment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.se2Assignment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="se2Assignment" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="se2Assignment" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Se2AssignmentApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
