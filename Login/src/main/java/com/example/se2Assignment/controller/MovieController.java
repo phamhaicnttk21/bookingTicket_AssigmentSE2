@@ -82,10 +82,13 @@ public class MovieController {
     }
 
     @GetMapping("/showAllCategory/{category}")
-    public String showMoviesByCategory(@PathVariable("category") String category, Model model) {
+    public String showMoviesByCategory(@PathVariable("category") String category, Model model,Principal principal) {
         List<Movie> movies = service.findByGenre(category);
         model.addAttribute("category", category);
         model.addAttribute("movies", movies);
+        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
+        model.addAttribute("user", userDetails);
+
         return "movie-list"; // Đây là tên của view hiển thị danh sách phim
     }
 
