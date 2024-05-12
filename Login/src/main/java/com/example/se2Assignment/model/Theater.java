@@ -10,7 +10,8 @@ import java.util.Set;
 public class Theater {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Value("1")
     private Long id;
 
     private String theaterName;
