@@ -9,7 +9,8 @@ import java.util.Set;
 @Table(name = "movies")
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Value("1")
     private long id;
     private String movieName;
     private String genre;
