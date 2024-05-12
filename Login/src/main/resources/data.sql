@@ -19,4 +19,4 @@ VALUES
 (5,"Diamond Cinema", "30", "20", "10", "Tầng 13, Diamond Plaza, 34 Đ. Lê Duẩn, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh", "https://thegioidienanh.vn/stores/news_dataimages/phuonght/122016/12/09/5030_LC_Diamond_Prestige_3.jpg"),
 (6,"MegaStar Cineplex Hung Vuong Plaza", "30", "20", "10", "126 Hùng Vương, Tích Sơn, Vĩnh Yên, Vĩnh Phúc", "https://www.primevn.com/upload/1/products/l_487507015_productimage_s112.jpg")
 ON DUPLICATE KEY UPDATE
-    movie_name = VALUES(theater_name);
+    theater_name = VALUES(theater_name);
