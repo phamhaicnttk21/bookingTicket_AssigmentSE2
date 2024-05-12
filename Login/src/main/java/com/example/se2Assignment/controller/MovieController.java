@@ -2,11 +2,10 @@ package com.example.se2Assignment.controller;
 
 import com.example.se2Assignment.model.Movie;
 import com.example.se2Assignment.model.Theater;
-import com.example.se2Assignment.service.MovieNotFoundException;
-import com.example.se2Assignment.service.MovieService;
-import com.example.se2Assignment.service.TheaterNotFoundException;
-import com.example.se2Assignment.service.TheaterService;
+import com.example.se2Assignment.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,12 +14,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
 public class MovieController {
     @Autowired
     private MovieService service;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    UserDetailsService userDetailsService;
     @GetMapping("/movies")
     public String showMovieList(Model model) {
         List<Movie> listMovies = service.listAll();
@@ -86,9 +90,12 @@ public class MovieController {
     }
 
     @GetMapping("/movie-description/{id}")
-    public String showMovieDescription(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+    public String showMovieDescription(@PathVariable("id") Long id, Model model,
+                                       RedirectAttributes ra, Principal principal) {
         try {
         Movie movie = service.get(id);
+        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
+        model.addAttribute("user", userDetails);
         model.addAttribute("movie", movie);
             return "movie-description";
         } catch (MovieNotFoundException e) {

@@ -1,6 +1,7 @@
 package com.example.se2Assignment.model;
 
 import jakarta.persistence.*;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.HashSet;
 import java.util.Set;
