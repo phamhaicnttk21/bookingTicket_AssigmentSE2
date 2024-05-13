@@ -3,7 +3,11 @@ package com.example.se2Assignment.controller;
 import com.example.se2Assignment.model.Theater;
 import com.example.se2Assignment.service.TheaterNotFoundException;
 import com.example.se2Assignment.service.TheaterService;
+import com.example.se2Assignment.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,12 +16,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
 public class TheaterController {
     @Autowired
     private TheaterService service;
+    @Autowired
+    UserDetailsService userDetailsService;
     // This is for admin
     @GetMapping("/theaters")
     public String showTheaterList(Model model) {
@@ -27,7 +34,9 @@ public class TheaterController {
     }
     // list all theaters for user
     @GetMapping("/allTheaters")
-    public String showTheaterListForUser(Model model) {
+    public String showTheaterListForUser(Model model,Principal principal) {
+        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
+        model.addAttribute("user", userDetails);
         List<Theater> listTheaters = service.listAll();
         model.addAttribute("listTheaters", listTheaters);
         return "toanBoTheaters";

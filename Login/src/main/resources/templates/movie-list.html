@@ -71,7 +71,7 @@
             text-decoration: none;
         }
         a {
-            color: white; /* Set the color for all links */
+            color: white; /* Set the color for all links */ 
             text-decoration: none; /* Remove underline */
         }
         .navbar-link {
@@ -85,7 +85,7 @@
 </head>
 <body>
     <div class="header">
-        <h1 class="text-white">USER Dashboard</h1>
+        <h1 class="text-white">Movies of [[${category}]] </h1>
         <h1 class="text-white" style="font-weight: bolder;">Welcome, [[${user.getFullname()}]]</h1>
         <span sec:authorize="isAuthenticated" class="nav-container">
             <a th:href="@{/logout} " class="navbar-link" >Logout</a>
@@ -98,7 +98,6 @@
         </div>
     </div>
 <div class="container">
-    <h2 th:text="'Movies in ' + ${category}"></h2>
     <ul class="movie-list">
         <li th:each="movie : ${movies}" class="movie-item">
             <img th:src="${movie.posterUrl}" alt="Movie Poster" class="movie-poster">

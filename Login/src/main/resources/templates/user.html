@@ -88,12 +88,19 @@
             color: white;
             text-decoration: none;
         }
+        .navbar-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
     </style>
 </head>
 <body>
 <div class="header">
-    <h1 class="text-white">USER Dashboard</h1>
+    <h1 class="text-white">HOME</h1>
     <h2 class="text-white" style="font-weight: bolder;">Welcome, [[${user.getFullname()}]]</h2>
     <span sec:authorize="isAuthenticated" class="nav-container">
         <a th:href="@{/logout} " class="navbar-link" >Logout</a>

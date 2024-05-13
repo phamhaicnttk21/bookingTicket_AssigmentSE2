@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6f94a0fb-bb45-4539-92f9-d920ef69fdf1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/model/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/Theaters.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/Theaters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/movie-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/movie-list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
