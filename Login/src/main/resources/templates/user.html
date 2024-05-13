@@ -101,7 +101,7 @@
 <body>
 <div class="header">
     <h1 class="text-white">HOME</h1>
-    <h2 class="text-white" style="font-weight: bolder;">Welcome, [[${user.getFullname()}]]</h2>
+    <h1 class="text-white" style="font-weight: bolder;">Welcome, [[${user.getFullname()}]]</h1>
     <span sec:authorize="isAuthenticated" class="nav-container">
         <a th:href="@{/logout} " class="navbar-link" >Logout</a>
     </span>

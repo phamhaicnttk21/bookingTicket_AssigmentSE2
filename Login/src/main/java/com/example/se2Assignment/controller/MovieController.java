@@ -75,9 +75,12 @@ public class MovieController {
     }
 
     @GetMapping("/showAllCategory")
-    public String showCategories(Model model) {
+    public String showCategories(Model model,Principal principal) {
+        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
+        model.addAttribute("user", userDetails);
         List<String> categories = service.getAllCategories();
         model.addAttribute("categories", categories);
+
         return "film-category";
     }
 
