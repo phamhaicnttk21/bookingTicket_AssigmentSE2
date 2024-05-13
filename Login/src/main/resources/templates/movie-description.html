@@ -117,6 +117,7 @@
             <p class="text-des"><strong>Description:</strong> <span style="font-weight: lighter;font-size: 13px;font-style: italic" th:text="${movie.description}"></span></p>
             <!-- Add more movie details as needed -->
         </div>
+        <a th:href="@{/movie-description/{id}/bookTheater(id=${movie.id})}" class="btn btn-primary">Book ticket</a>
     </div>
 </div>
 </body>
