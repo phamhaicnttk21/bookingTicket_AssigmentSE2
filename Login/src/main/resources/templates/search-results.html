@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <title>Search Results</title>
     <style>
-        /* CSS để thu nhỏ kích thước của ảnh */
-        .poster-image {
-            max-width: 150px; /* Kích thước tối đa của ảnh */
-            height: auto; /* Giữ tỷ lệ khung hình */
-        }
-
         body {
             font-family: Arial, sans-serif;
             background-color: black;
@@ -38,15 +32,28 @@
             text-align: center;
             margin-bottom: 20px;
         }
+
         .movie-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .movie-item {
             margin-bottom: 20px;
             padding: 20px;
             background-color: #f5f5f5;
             border-radius: 5px;
             display: flex;
-            justify-content: center;
         }
 
+        .movie-poster {
+            max-width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .detail-container{
+            margin-left: 7%;
+        }
         .header {
             background-color: #FF955A;
             padding: 20px;
@@ -67,10 +74,12 @@
             color: white;
             text-decoration: none;
         }
+
         a {
             color: white; /* Set the color for all links */
             text-decoration: none; /* Remove underline */
         }
+
         .navbar-link {
             color: white;
             text-decoration: none;
@@ -101,34 +110,24 @@
     <div th:if="${movies.empty}">
         <p>No movies found.</p>
     </div>
-    <div class="movie-list" th:unless="${movies.empty}">
-        <table border="1">
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Genre</th>
-                <th>Cast</th>
-                <th>Duration</th>
-                <th>Rate</th>
-                <th>Image</th>
-                <th>Description</th>
-                <th>Cost</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="movie : ${movies}">
-                <td th:text="${movie.movieName}"></td>
-                <td th:text="${movie.genre}"></td>
-                <td th:text="${movie.cast}"></td>
-                <td th:text="${movie.duration}"></td>
-                <td th:text="${movie.rate}"></td>
-                <td><img class="poster-image" th:src="${movie.posterUrl}" alt="Poster"></td>
-                <td th:text="${movie.description}"></td>
-                <td>[[${'$' + movie.baseCost}]]</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    <div class="container" th:unless="${movies.empty}">
+        <ul class="movie-list">
+            <li th:each="movie : ${movies}" class="movie-item">
+                <img th:src="${movie.posterUrl}" alt="Movie Poster" class="movie-poster">
+                <div class="detail-container">
+                    <Strong>Name:</Strong><p th:text=" ${movie.movieName}"></p>
+                    <Strong>Genre:</Strong><p th:text="' ' + ${movie.genre}"></p>
+                    <Strong>Cast:</Strong><p th:text="' ' + ${movie.cast}"></p>
+                    <Strong>Duration:</Strong><p th:text="' ' + ${movie.duration}"></p>
+                    <Strong>Rate: </Strong><p th:text="'' + ${movie.rate}"></p>
+                    <Strong>Description:</Strong><p th:text="' ' + ${movie.description}"></p>
+                    <Strong>Cost:</Strong><p th:text="' ' + ${movie.baseCost}"></p>
+
+
+                    <!-- Add more movie details here as needed -->
+                </div>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
