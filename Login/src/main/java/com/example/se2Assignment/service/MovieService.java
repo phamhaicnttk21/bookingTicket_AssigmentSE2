@@ -10,11 +10,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class MovieService {
     @Autowired
     private MovieRepository repo;
+    @Autowired
+    private TheaterRepository theaterRepo;
     public List<Movie> listAll() {
         return (List<Movie>) repo.findAll();
     }
@@ -28,13 +31,7 @@ public class MovieService {
         }
         repo.deleteById(id);
     }
-    public Movie get(Long id) throws MovieNotFoundException {
-        Optional<Movie> result = repo.findById(id);
-        if (result.isPresent()) {
-            return result.get();
-        }
-        throw new MovieNotFoundException("Could not find any movies with ID " + id);
-    }
+
     @Transactional
     public Set<Theater> getTheatersByMovieId(Long movieId) throws MovieNotFoundException {
         // Fetch the movie from the database
@@ -42,6 +39,13 @@ public class MovieService {
 
         // Return the theaters showing the movie
         return movie.getTheaters();
+    }
+    public Movie get(Long id) throws MovieNotFoundException {
+        Optional<Movie> result = repo.findById(id);
+        if (result.isPresent()) {
+            return result.get();
+        }
+        throw new MovieNotFoundException("Could not find any movies with ID " + id);
     }
     public List<Movie> searchMovieByName(String keyword) {
         return repo.findByMovieNameContainingIgnoreCase(keyword);
@@ -52,5 +56,4 @@ public class MovieService {
     public List<Movie> findByGenre(String genre) {
         return repo.findByGenre(genre);
     }
-
 }
