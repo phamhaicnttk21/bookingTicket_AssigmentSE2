@@ -4,6 +4,9 @@ import com.example.se2Assignment.model.Movie;
 import com.example.se2Assignment.model.Theater;
 import com.example.se2Assignment.repository.MovieRepository;
 import com.example.se2Assignment.repository.TheaterRepository;
+
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

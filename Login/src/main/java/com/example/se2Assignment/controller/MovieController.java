@@ -68,9 +68,11 @@ public class MovieController {
         }
     }
     @GetMapping("/search")
-    public String searchMovieByName(@RequestParam("keyword") String keyword, Model model) {
+    public String searchMovieByName(@RequestParam("keyword") String keyword, Model model,Principal principal) {
         List<Movie> movies = service.searchMovieByName(keyword);
         model.addAttribute("movies", movies);
+        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
+        model.addAttribute("user", userDetails);
         return "search-results";
     }
 
