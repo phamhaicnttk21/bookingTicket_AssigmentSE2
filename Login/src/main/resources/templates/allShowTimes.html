@@ -51,15 +51,15 @@
         }
         body {
             font-family: Arial, sans-serif;
-            background-color: black    ;
+            background-color: black;
             color: white;
             margin: 0;
             padding: 0;
         }
-        table{
+        table {
             background-color: white;
         }
-        .delete-container{
+        .delete-container {
             width: 70px;
             font-size: 13px;
             height: 35px;
@@ -70,7 +70,7 @@
             text-align: center;
             border-radius: 10px;
         }
-        .edit{
+        .edit {
             width: 70px;
             height: 35px;
             background-color: #44A5FF;
@@ -82,7 +82,7 @@
             border-radius: 10px;
             margin-left: 10px;
         }
-        .new-theater{
+        .new-theater {
             border-radius: 10px;
             width: 10%;
             height: 51px;
@@ -92,12 +92,12 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             line-height: 51px;
         }
-        .button-container{
+        .button-container {
             justify-content: center;
             flex-direction: row;
             display: flex;
         }
-        .edit:hover{
+        .edit:hover {
             opacity: 0.65;
         }
         .delete-container:hover {
@@ -110,65 +110,45 @@
 
 </head>
 <header class="header">
-    <h1>Theater List</h1>
-    <h1>Admin </h1>
+    <h1>ShowTime List</h1>
+    <h1>Admin</h1>
     <a th:href="@{/admin-page}">Home page</a>
-
 </header>
 <body>
 <h1 style="padding-left: 15%;">Dashboard</h1>
-
 <div>
     <table class="table table-bordered">
         <thead class="thead-dark">
         <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Description</th>
-            <th>Image</th>
-            <th>Sections A</th>
-            <th>Sections B</th>
-            <th>VIP Sections</th>
-            <th>Plus Cost</th>
-
+            <th>Date Time</th>
+            <th>Theater</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        <th:block th:each="theater : ${listTheaters}">
+        <th:block th:each="showTime : ${listShowTimes}">
             <tr>
-                <td>[[${theater.id}]]</td>
-                <td>[[${theater.theaterName}]]</td>
-                <td>[[${theater.address}]]</td>
-                <td>[[${theater.description}]]</td>
-                <td><img th:src="${theater.imageUrl}" alt="Theater Image" style="width:100px; height:auto;"/></td>
-                <td>[[${theater.a_section}]]</td>
-                <td>[[${theater.b_section}]]</td>
-                <td>[[${theater.vip_section}]]</td>
-                <td>$[[${theater.plusCost}]]</td>
-                <td style="display: flex; justify-content: space-between;">
-                    <a class="h4 mr-3" th:href="@{'/theaters/edit/' + ${theater.id}}">
-                        <div class="edit">
-                            Edit
-                        </div>
-                    </a>
-
-                    <a class="h4" th:href="@{'/theaters/delete/' + ${theater.id}}">
+                <td>[[${showTime.id}]]</td>
+                <td>[[${showTime.showDateTime}]]</td>
+                <td>[[${showTime.theater}]]</td>
+                <td>
+                    <a th:href="@{'/showTimes/delete/' + ${showTime.id}}">
                         <div class="delete-container">
                             Delete
                         </div>
                     </a>
+
                 </td>
             </tr>
         </th:block>
         </tbody>
     </table>
-    <a class="h3" th:href="@{/theaters/new}">
+    <a class="h3" th:href="@{/showTimes/new}">
         <div class="button-container">
-            <div class="new-theater" >
-                New Theater
+            <div class="new-theater">
+                New ShowTime
             </div>
-
         </div>
     </a>
 </div>

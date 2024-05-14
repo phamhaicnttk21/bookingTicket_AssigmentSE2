@@ -59,6 +59,7 @@
         <div class="nav-container">
             <a th:href="@{/allTheaters}" class="navbar-link">Theaters</a>
         </div>
+<<<<<<< HEAD
         <div class="nav-container" >
             <a th:href="@{/showAllCategory}" class="navbar-link">Movies</a>
         </div>
@@ -77,6 +78,16 @@
                 <p><strong>VIP-Section Seats:</strong> <span th:text="${theater.vip_section}"></span></p>
                 <!-- Thêm các trường thông tin khác nếu cần -->
             </div>
+=======
+        <div class="col-md-6">
+            <h3 th:text="${theater.theaterName}"></h3>
+            <p><strong>Address:</strong> <span th:text="${theater.address}"></span></p>
+            <p><strong>Description:</strong> <span th:text="${theater.description}"></span></p>
+            <p><strong>A-Section Seats:</strong> <span th:text="${theater.a_section}"></span></p>
+            <p><strong>B-Section Seats:</strong> <span th:text="${theater.b_section}"></span></p>
+            <p><strong>VIP-Section Seats:</strong> <span th:text="${theater.vip_section}"></span></p>
+            <p><strong>Plus Cost:</strong> <span th:text="${theater.plusCost}"></span></p>
+>>>>>>> 29a773dd658a874046de2d3e2ad9c3f10db164f9
         </div>
     </div>
 

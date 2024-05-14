@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ShowTime</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+        .showtime-list {
+            list-style: none;
+            padding: 0;
+        }
+        .showtime-list li {
+            background-color: #ffffff;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .showtime-list li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .showtime-list li a {
+            text-decoration: none;
+            color: #343a40;
+            font-size: 18px;
+            display: block;
+        }
+        .showtime-list li a:hover {
+            color: #007bff;
+        }
+        .showtime-list span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Choose one showTime</h1>
+
+    <ul class="showtime-list">
+        <li><a th:href="@{'/movie-description/1/bookTheater/userShowTime/bookSeat'}">showTime: <span>2024-05-20 08:00:00</span></a></li>
+        <li><a th:href="@{'/movie-description/1/bookTheater/userShowTime/bookSeat'}">showTime: <span>2024-05-20 14:30:00</span></a></li>
+        <li><a th:href="@{'/movie-description/1/bookTheater/userShowTime/bookSeat'}">showTime: <span>2024-05-20 21:00:00</span></a></li>
+    </ul>
+
+    <ul class="showtime-list">
+        <li><a th:href="@{'/movie-description/2/bookTheater/userShowTime/bookSeat'}">showTime: <span>2024-06-25 08:00:00</span></a></li>
+        <li><a th:href="@{'/movie-description/2/bookTheater/userShowTime/bookSeat'}">showTime: <span>2024-06-25 14:30:00</span></a></li>
+        <li><a th:href="@{'/movie-description/2/bookTheater/userShowTime/bookSeat'}">showTime: <span>2024-06-25 21:00:00</span></a></li>
+    </ul>
+
+    <ul class="showtime-list">
+        <li><a th:href="@{'/movie-description/3/bookTheater/userShowTime/bookSeat'}">showTime: <span>2024-08-20 08:00:00</span></a></li>
+        <li><a th:href="@{'/movie-description/3/bookTheater/userShowTime/bookSeat'}">showTime: <span>2024-08-20 14:30:00</span></a></li>
+        <li><a th:href="@{'/movie-description/3/bookTheater/userShowTime/bookSeat'}">showTime: <span>2024-08-20 21:00:00</span></a></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -16,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.Set;
 import java.security.Principal;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class MovieController {
@@ -123,4 +124,20 @@ public class MovieController {
             return "redirect:/movies";
         }
     }
+<<<<<<< HEAD
+=======
+
+    @GetMapping("/movie-description/{id}/bookTheater/userShowTime")
+    public String showShowTimeToUser(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+       return "showTimePage";
+    }
+
+    @GetMapping("/movie-description/{id}/bookTheater/userShowTime/bookSeat")
+    public String bookSeatFun(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+        return "hello";
+    }
+
+
+
+>>>>>>> 29a773dd658a874046de2d3e2ad9c3f10db164f9
 }

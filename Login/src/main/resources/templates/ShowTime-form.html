@@ -85,71 +85,40 @@
 <div class="container">
     <div class="form-container">
         <div class="formHeader">
-            <h2>Theater Form</h2>
+            <h2>showTime Form</h2>
         </div>
-        <form th:action="@{/theaters/save}" method="post" th:object="${theater}"
+        <form th:action="@{/showTimes/save}" method="post" th:object="${showTime}"
               style="max-width: 500px; margin: 0 auto;">
             <input type="hidden" th:field="*{id}">
             <div class="border border-secondary rounded p-3">
                 <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Theater Name:</label>
+                    <label class="col-sm-4 col-form-label">showTime date:</label>
                     <div class="col-sm-8">
-                        <input type="text" th:field="*{theaterName}" class="form-control" required minlength="2" maxlength="100"/>
+                        <input type="datetime-local" th:field="*{showDateTime}" class="form-control" required />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Address:</label>
+                    <label class="col-sm-4 col-form-label">Theater:</label>
                     <div class="col-sm-8">
-                        <input type="text" th:field="*{address}" class="form-control" required minlength="5" maxlength="200" />
+                        <select class="form-control" th:field="*{theater.id}">
+                            <option th:each="theater : ${theaters}" th:value="${theater.id}" th:text="${theater.theaterName}"></option>
+                        </select>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Description:</label>
-                    <div class="col-sm-8">
-                        <textarea th:field="*{description}" class="form-control" required></textarea>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Image URL:</label>
-                    <div class="col-sm-8">
-                        <input type="text" th:field="*{imageUrl}" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Section A Seats:</label>
-                    <div class="col-sm-8">
-                        <input type="number" th:field="*{a_section}" class="form-control" min="0" required />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Section B Seats:</label>
-                    <div class="col-sm-8">
-                        <input type="number" th:field="*{b_section}" class="form-control" min="0" required />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">VIP Section Seats:</label>
-                    <div class="col-sm-8">
-                        <input type="number" th:field="*{vip_section}" class="form-control" min="0" required />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">plus cost:</label>
-                    <div class="col-sm-8">
-                        <input type="number" th:field="*{plusCost}" class="form-control" min="0" required />
-                    </div>
-                </div>
-                <div class="buttonsContainer" >
+
+
+                <div class="buttonsContainer">
                     <button type="submit" class="save">Save</button>
                     <button type="button" class="cancel" onclick="cancelForm()">Cancel</button>
                 </div>
+
             </div>
         </form>
     </div>
 </div>
 <script type="text/javascript">
     function cancelForm() {
-        window.location = "[[@{/theaters}]]"; // Adjust the redirect location as needed
+        window.location = "[[@{/showTimes}]]"; // Adjust the redirect location as needed
     }
 </script>
 </body>

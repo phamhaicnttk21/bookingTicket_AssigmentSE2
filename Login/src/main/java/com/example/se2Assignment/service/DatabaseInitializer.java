@@ -2,17 +2,16 @@ package com.example.se2Assignment.service;
 
 import com.example.se2Assignment.model.Movie;
 import com.example.se2Assignment.model.Theater;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Component
 public class DatabaseInitializer implements ApplicationRunner {
-
     @Autowired
     private MovieService movieService;
     @Autowired

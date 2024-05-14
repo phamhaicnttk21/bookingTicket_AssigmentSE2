@@ -3,6 +3,22 @@
 <head>
     <title>Theater List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .clickable-row {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var rows = document.querySelectorAll(".clickable-row");
+            rows.forEach(function (row) {
+                row.addEventListener("click", function () {
+                    var url = this.dataset.href;
+                    window.location.href = url;
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="container">
@@ -16,7 +32,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="theater : ${theaters}">
+        <tr th:each="theater : ${theaters}" th:data-href="@{'/movie-description/' + ${theater.id} + '/bookTheater/userShowTime'}" class="clickable-row">
             <td th:text="${theater.theaterName}"></td>
             <td th:text="${theater.address}"></td>
             <td th:text="${theater.description}"></td>

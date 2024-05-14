@@ -11,18 +11,15 @@ public class ShowTime {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private LocalDateTime showDateTime;
-    @ManyToOne
-    @JoinColumn(name = "movie_id")
-    private Movie movie;
+
     @ManyToOne
     @JoinColumn(name = "theater_id")
     private Theater theater;
     // Default constructor
     public ShowTime() {}
     // Parameterized constructor
-    public ShowTime(LocalDateTime showDateTime, Movie movie, Theater theater) {
+    public ShowTime(LocalDateTime showDateTime, Theater theater) {
         this.showDateTime = showDateTime;
-        this.movie = movie;
         this.theater = theater;
     }
     public Long getId() {
@@ -41,13 +38,7 @@ public class ShowTime {
         this.showDateTime = showDateTime;
     }
 
-    public Movie getMovie() {
-        return movie;
-    }
 
-    public void setMovie(Movie movie) {
-        this.movie = movie;
-    }
 
     public Theater getTheater() {
         return theater;
