@@ -4,11 +4,13 @@ import com.example.se2Assignment.model.Movie;
 import com.example.se2Assignment.model.Theater;
 import com.example.se2Assignment.repository.MovieRepository;
 import com.example.se2Assignment.repository.TheaterRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class MovieService {
@@ -33,6 +35,14 @@ public class MovieService {
             return result.get();
         }
         throw new MovieNotFoundException("Could not find any movies with ID " + id);
+    }
+    @Transactional
+    public Set<Theater> getTheatersByMovieId(Long movieId) throws MovieNotFoundException {
+        // Fetch the movie from the database
+        Movie movie = repo.findById(movieId).orElseThrow(() -> new MovieNotFoundException("Could not find movie with ID " + movieId));
+
+        // Return the theaters showing the movie
+        return movie.getTheaters();
     }
     public List<Movie> searchMovieByName(String keyword) {
         return repo.findByMovieNameContainingIgnoreCase(keyword);

@@ -16,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class MovieController {
@@ -103,4 +104,29 @@ public class MovieController {
             return "movie-list";
         }
     }
+    @GetMapping("/movie-description/{id}/bookTheater")
+    public String bookTicket(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+        try {
+            Movie movie = service.get(id);
+            Set<Theater> theaters = movie.getTheaters();
+            model.addAttribute("theaters", theaters);
+            return "theater_list";
+        } catch (MovieNotFoundException e) {
+            ra.addFlashAttribute("message", e.getMessage());
+            return "redirect:/movies";
+        }
+    }
+
+    @GetMapping("/movie-description/{id}/bookTheater/userShowTime")
+    public String showShowTimeToUser(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+       return "showTimePage";
+    }
+
+    @GetMapping("/movie-description/{id}/bookTheater/userShowTime/bookSeat")
+    public String bookSeatFun(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+        return "hello";
+    }
+
+
+
 }

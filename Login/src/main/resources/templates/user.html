@@ -51,7 +51,7 @@
             font-weight: bolder;
         }
         p{
-          font-weight: lighter;  
+          font-weight: lighter;
         }
         .navbar-link {
             color: white;
@@ -63,7 +63,7 @@
 
         .navbar-link:hover {
             opacity: 0.65;
-            
+
         }
         .slide {
             margin-top: 20px;
@@ -88,13 +88,20 @@
             color: white;
             text-decoration: none;
         }
+        .navbar-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
     </style>
 </head>
 <body>
 <div class="header">
-    <h1 class="text-white">USER Dashboard</h1>
-    <h2 class="text-white" style="font-weight: bolder;">Welcome, [[${user.getFullname()}]]</h2>
+    <h1 class="text-white">HOME</h1>
+    <h1 class="text-white" style="font-weight: bolder;">Welcome, [[${user.getFullname()}]]</h1>
     <span sec:authorize="isAuthenticated" class="nav-container">
         <a th:href="@{/logout} " class="navbar-link" >Logout</a>
     </span>
@@ -118,7 +125,7 @@
         </div>
     </div>
 
-        
+
 
     <div class="browseBody"  >
         <div class="slide">
@@ -138,7 +145,7 @@
                         <img class="d-block w-100" src="https://repository-images.githubusercontent.com/275336521/20d38e00-6634-11eb-9d1f-6a5232d0f84f" alt="First slide">
                         <h5>Online Cinema System</h5>
                         <p>More Movies on the right</p>
-               
+
                     </div>
                     <div class="carousel-item" th:each="movie : ${movies}">
                         <a th:href="@{'/movie-description/' + ${movie.id}}"  >
@@ -146,7 +153,7 @@
                             <img th:src="${movie.posterUrl}" alt="Movie Image" class="d-block w-100">
                             <h5 th:text="${movie.movieName}"></h5>
                             <p th:text="${movie.genre}"></p>
-                            
+
                         </a>
                     </div>
                 </div>
@@ -165,19 +172,19 @@
 
     </div>
 
-<!-- Bootstrap JS and jQuery (required for Bootstrap's JS plugins) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS and jQuery (required for Bootstrap's JS plugins) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
-    function search() {
-        var keyword = document.getElementById("searchInput").value.trim();
-        if (keyword !== "") {
-            window.location.href = "http://localhost:8082/search?keyword=" + encodeURIComponent(keyword);
+    <script>
+        function search() {
+            var keyword = document.getElementById("searchInput").value.trim();
+            if (keyword !== "") {
+                window.location.href = "http://localhost:8082/search?keyword=" + encodeURIComponent(keyword);
+            }
         }
-    }
-</script>
-
+    </script>
+</div>
 </body>
 </html>

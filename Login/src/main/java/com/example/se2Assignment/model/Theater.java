@@ -17,11 +17,13 @@ public class Theater {
 
     private String theaterName;
     private String address;
+    @Column(columnDefinition = "LONGTEXT")
     private String imageUrl;
     private String description;
     private int a_section;
     private int b_section;
     private int vip_section;
+    private double plusCost;
     @ManyToMany(mappedBy = "theaters")
     private Set<Movie> movies = new HashSet<>();
     @OneToMany(mappedBy = "theater", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -31,8 +33,10 @@ public class Theater {
     public Theater() {
     }
 
+
+
     // Parameterized constructor
-    public Theater(String theaterName, String address, String imageUrl, String description, int a_section, int b_section, int vip_section) {
+    public Theater(String theaterName, String address, String imageUrl, String description, int a_section, int b_section, int vip_section, double plusCost) {
         this.theaterName = theaterName;
         this.address = address;
         this.imageUrl = imageUrl;
@@ -40,6 +44,7 @@ public class Theater {
         this.a_section = a_section;
         this.b_section = b_section;
         this.vip_section = vip_section;
+        this.plusCost = plusCost;
     }
 
     // Getters and Setters
@@ -120,6 +125,17 @@ public class Theater {
 
     public void setShowTimes(Set<ShowTime> showTimes) {
         this.showTimes = showTimes;
+    }
+    public double getPlusCost() {
+        return plusCost;
+    }
+
+    public void setPlusCost(double plusCost) {
+        this.plusCost = plusCost;
+    }
+    @Override
+    public String toString() {
+        return theaterName;
     }
 
 }

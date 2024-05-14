@@ -18,6 +18,7 @@ public class Movie {
     private String cast;
     private String duration;
     private String rate;
+    @Column(columnDefinition = "LONGTEXT")
     private String posterUrl;
     private String description;
     private double baseCost;
@@ -28,8 +29,7 @@ public class Movie {
             inverseJoinColumns = @JoinColumn(name = "theater_id")
     )
     private Set<Theater> theaters = new HashSet<>();
-    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<ShowTime> showTimes = new HashSet<>();
+
 
     public Movie(String movieName, String genre, String cast, String duration, String rate, String posterUrl, String description, double baseCost) {
         this.movieName = movieName;
@@ -124,11 +124,5 @@ public class Movie {
     public void setTheaters(Set<Theater> theaters) {
         this.theaters = theaters;
     }
-    public Set<ShowTime> getShowTimes() {
-        return showTimes;
-    }
 
-    public void setShowTimes(Set<ShowTime> showTimes) {
-        this.showTimes = showTimes;
-    }
 }
