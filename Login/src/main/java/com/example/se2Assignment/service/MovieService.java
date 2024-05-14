@@ -25,11 +25,14 @@ public class MovieService {
     public void save(Movie movie) {
         repo.save(movie);
     }
+    @Transactional
     public void delete(Long id) throws MovieNotFoundException {
-        Long count = repo.countById(id);
-        if (count == null || count == 0) {
-            throw new MovieNotFoundException("Could not find any movies with ID " + id);
-        }
+        Movie movie = repo.findById(id).orElseThrow(() -> new MovieNotFoundException("Could not find movie with ID " + id));
+
+        // Remove the associations between the movie and its theaters
+        movie.getTheaters().clear();
+        repo.save(movie);
+        
         repo.deleteById(id);
     }
 
