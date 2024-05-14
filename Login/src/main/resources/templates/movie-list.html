@@ -46,7 +46,7 @@
             height: auto;
             border-radius: 5px;
         }
-<<<<<<< HEAD
+
         .detail-container{
             margin-left: 7%;
         }
@@ -81,8 +81,7 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
-=======
->>>>>>> 29a773dd658a874046de2d3e2ad9c3f10db164f9
+
     </style>
 </head>
 <body>
@@ -103,7 +102,7 @@
     <ul class="movie-list">
         <li th:each="movie : ${movies}" class="movie-item">
             <img th:src="${movie.posterUrl}" alt="Movie Poster" class="movie-poster">
-<<<<<<< HEAD
+
             <div class="detail-container">
                 <Strong>Name:</Strong><p th:text=" ${movie.movieName}"></p>
                 <Strong>Genre:</Strong><p th:text="' ' + ${movie.genre}"></p>
@@ -112,16 +111,7 @@
                 <Strong>Rate: </Strong><p th:text="'' + ${movie.rate}"></p>
                 <Strong>Description:</Strong><p th:text="' ' + ${movie.description}"></p>
                 <Strong>Cost:</Strong><p th:text="' ' + ${movie.baseCost}"></p>
-=======
-            <div>
-                <p th:text="'Name: ' + ${movie.movieName}"></p>
-                <p th:text="'genre: ' + ${movie.genre}"></p>
-                <p th:text="'cast: ' + ${movie.cast}"></p>
-                <p th:text="'duration: ' + ${movie.duration}"></p>
-                <p th:text="'rate: ' + ${movie.rate}"></p>
-                <p th:text="'description: ' + ${movie.description}"></p>
-                <p th:text="'cost: ' + ${movie.baseCost}"></p>
->>>>>>> 29a773dd658a874046de2d3e2ad9c3f10db164f9
+
 
 
             <a th:href="@{/movie-description/{id}/bookTheater(id=${movie.id})}" class="btn btn-primary">Book ticket</a>

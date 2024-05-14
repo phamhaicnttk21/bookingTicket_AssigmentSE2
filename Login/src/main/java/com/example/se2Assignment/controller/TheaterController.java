@@ -80,11 +80,9 @@ public class TheaterController {
     }
 
     @GetMapping("/theaterDetail")
-<<<<<<< HEAD
-    public String showTheaterDetail(@RequestParam("id") Long theaterId, Model model,Principal principal) throws TheaterNotFoundException {
-=======
+
     public String showTheaterDetail(@RequestParam("id") Long theaterId, Model model, Principal principal) throws TheaterNotFoundException {
->>>>>>> 29a773dd658a874046de2d3e2ad9c3f10db164f9
+
         UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
         model.addAttribute("user", userDetails);
         Theater theater = service.get(theaterId);
