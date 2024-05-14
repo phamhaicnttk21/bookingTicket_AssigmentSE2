@@ -27,8 +27,9 @@ public class TheaterController {
     UserDetailsService userDetailsService;
     // This is for admin
     @GetMapping("/theaters")
-    public String showTheaterList(Model model) {
+    public String showTheaterList(Model model,RedirectAttributes ra) {
         List<Theater> listTheaters = service.listAll();
+        ra.addFlashAttribute("message", "The theater has been delete successfully.");
         model.addAttribute("listTheaters", listTheaters);
         return "Theaters";
     }
