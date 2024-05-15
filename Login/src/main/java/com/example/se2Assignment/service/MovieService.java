@@ -4,7 +4,6 @@ import com.example.se2Assignment.model.Movie;
 import com.example.se2Assignment.model.Theater;
 import com.example.se2Assignment.repository.MovieRepository;
 import com.example.se2Assignment.repository.TheaterRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,8 +30,11 @@ public class MovieService {
 
         // Remove the associations between the movie and its theaters
         movie.getTheaters().clear();
+
+        // Save the movie back to the database
         repo.save(movie);
-        
+
+        // Now you can delete the movie
         repo.deleteById(id);
     }
 
@@ -51,7 +53,6 @@ public class MovieService {
         }
         throw new MovieNotFoundException("Could not find any movies with ID " + id);
     }
-    
     public List<Movie> searchMovieByName(String keyword) {
         return repo.findByMovieNameContainingIgnoreCase(keyword);
     }

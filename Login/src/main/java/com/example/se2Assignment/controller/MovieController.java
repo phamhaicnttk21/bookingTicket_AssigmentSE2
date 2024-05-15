@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import java.util.Set;
+
 import java.security.Principal;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class MovieController {
@@ -24,14 +25,12 @@ public class MovieController {
     @Autowired
     private UserService userService;
     @Autowired
-    private TheaterService theaterService;
-    @Autowired
     UserDetailsService userDetailsService;
     @GetMapping("/movies")
     public String showMovieList(Model model) {
         List<Movie> listMovies = service.listAll();
         model.addAttribute("listMovies", listMovies);
-        return "movies";
+        return "Movies";
     }
     @GetMapping("/movies/new")
     public String showNewForm(Model model) {
@@ -70,32 +69,24 @@ public class MovieController {
         }
     }
     @GetMapping("/search")
-    public String searchMovieByName(@RequestParam("keyword") String keyword, Model model,Principal principal) {
+    public String searchMovieByName(@RequestParam("keyword") String keyword, Model model) {
         List<Movie> movies = service.searchMovieByName(keyword);
         model.addAttribute("movies", movies);
-        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
-        model.addAttribute("user", userDetails);
         return "search-results";
     }
 
     @GetMapping("/showAllCategory")
-    public String showCategories(Model model,Principal principal) {
-        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
-        model.addAttribute("user", userDetails);
+    public String showCategories(Model model) {
         List<String> categories = service.getAllCategories();
         model.addAttribute("categories", categories);
-
         return "film-category";
     }
 
     @GetMapping("/showAllCategory/{category}")
-    public String showMoviesByCategory(@PathVariable("category") String category, Model model,Principal principal) {
+    public String showMoviesByCategory(@PathVariable("category") String category, Model model) {
         List<Movie> movies = service.findByGenre(category);
         model.addAttribute("category", category);
         model.addAttribute("movies", movies);
-        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
-        model.addAttribute("user", userDetails);
-
         return "movie-list"; // Đây là tên của view hiển thị danh sách phim
     }
 
@@ -114,83 +105,16 @@ public class MovieController {
         }
     }
     @GetMapping("/movie-description/{id}/bookTheater")
-    public String bookTicket(@PathVariable("id") Long id, Model model, RedirectAttributes ra,Principal principal) {
+    public String bookTicket(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
         try {
             Movie movie = service.get(id);
             Set<Theater> theaters = movie.getTheaters();
             model.addAttribute("theaters", theaters);
-            UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
-            model.addAttribute("user", userDetails);
-             return "theater_list";
+            return "theater_list"; // This is the view name for the list of theaters
         } catch (MovieNotFoundException e) {
             ra.addFlashAttribute("message", e.getMessage());
             return "redirect:/movies";
         }
     }
-    @GetMapping("/movie-description/{id}/bookTheater/userShowTime")
-    public String showShowTimeToUser(@PathVariable("id") Long id, Model model,
-                                     RedirectAttributes ra,Principal principal)
-            throws TheaterNotFoundException {
-        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
-        model.addAttribute("user", userDetails);
-        Theater theater = theaterService.get(id);
-        model.addAttribute("theater", theater);
-        return "showTimePage";
-    }
 
-    @GetMapping("/movie-description/{id}/bookTheater/userShowTime/bookSeat")
-    public String bookSeatFun(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
-        return "seatBooking";
-    }
-    @GetMapping("/movie-description/{movieId}/bookTheater/userShowTime/bookSeat/ticketSelection")
-    public String bookSeatFun(@PathVariable("movieId") Long movieId,
-                              @RequestParam("theaterId") Long theaterId,
-                              Model model) {
-        try {
-            // Fetch movie and theater details
-            Movie movie = service.get(movieId);
-            Theater theater = theaterService.get(theaterId);
-
-            // Log the retrieved movie and theater details
-            System.out.println("Retrieved Movie: " + movie);
-            System.out.println("Retrieved Theater: " + theater);
-
-            // Add attributes to the model
-            model.addAttribute("movie", movie);
-            model.addAttribute("theater", theater);
-            return "ticket-selection"; // Ensure this template exists in your templates
-
-        } catch (MovieNotFoundException | TheaterNotFoundException e) {
-            // Log the exception
-            e.printStackTrace();
-            // Add error attribute to the model
-            model.addAttribute("error", "Could not find movie or theater");
-            // Redirect to a simple error page
-            return "error-page"; // Ensure this error page exists in your templates
-        } catch (Exception e) {
-            // Log the exception
-            e.printStackTrace();
-            // Add error attribute to the model
-            model.addAttribute("error", "An unexpected error occurred");
-            // Redirect to a simple error page
-            return "error-page"; // Ensure this error page exists in your templates
-        }
-
-    }
-    @PostMapping("/movie-description/{id}/bookTheater/userShowTime/bookSeat/ticketSelection/process-ticket-selection")
-    public String processTicketSelection(@RequestParam("movieId") Long movieId,
-                                         @RequestParam("numTickets") int numTickets,
-                                         RedirectAttributes ra) {
-        try {
-            Movie movie = service.get(movieId);
-            double baseCost = movie.getBaseCost();
-            double totalCost = baseCost * numTickets;
-            ra.addFlashAttribute("movieName", movie.getMovieName());
-            ra.addFlashAttribute("totalCost", totalCost);
-            return "redirect:/ticket-confirmation"; // Redirect to the confirmation page
-        } catch (MovieNotFoundException e) {
-            ra.addFlashAttribute("message", e.getMessage());
-            return "redirect:/movies";
-        }
-    }    
 }

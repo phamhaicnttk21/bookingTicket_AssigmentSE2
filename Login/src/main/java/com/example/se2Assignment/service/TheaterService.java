@@ -31,7 +31,8 @@ public class TheaterService {
         entityManager.createNativeQuery("DELETE FROM movie_theater WHERE theater_id = ?")
                 .setParameter(1, id)
                 .executeUpdate();
-        
+
+        // Now you can delete the theater
         repo.deleteById(id);
     }
 

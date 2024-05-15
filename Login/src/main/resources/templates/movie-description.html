@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-16">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -90,30 +90,27 @@
 </head>
 <body>
 <div class="header">
-    <h1 class="text-white"><strong>Movie's Description</strong> </h1>
+    <h1 class="text-white">USER </h1>
     <h2 class="text-white" style="font-weight: bolder;">Welcome, [[${user.getFullname()}]]</h2>
     <span sec:authorize="isAuthenticated" class="nav-container">
         <a th:href="@{/logout} " class="navbar-link" >Logout</a>
     </span>
     <div class="nav-container">
-        <a th:href="@{/user-page}" class="navbar-link">Home</a>
-    </div>
-    <div class="nav-container">
         <a th:href="@{/allTheaters}" class="navbar-link">Theaters</a>
     </div>
-
     <div class="nav-container">
         <a th:href="@{/showAllCategory}" class="navbar-link">Movies</a>
     </div>
 </div>
 <div class="container">
-    <h2 class="movie-description"><strong> [[${movie.movieName}]]</strong></h2>
+    <h2 class="movie-description"><strong>Movie Description</strong></h2>
     <div class="movie-details">
 
         <div>
             <img th:src="${movie.posterUrl}" alt="Movie Image">
         </div>
         <div>
+            <h3 th:text="${movie.movieName}"></h3>
             <p class="text-des"><strong>Genre:</strong> <span style="font-weight: lighter;font-size: 13px;font-style: italic" th:text="${movie.genre}"></span></p>
             <p class="text-des"><strong>Cast:</strong> <span style="font-weight: lighter;font-size: 13px;font-style: italic" th:text="${movie.cast}"></span></p>
             <p class="text-des"><strong>Duration:</strong> <span style="font-weight: lighter;font-size: 13px;font-style: italic" th:text="${movie.duration}"></span></p>
