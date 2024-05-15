@@ -123,6 +123,7 @@ public class Theater {
         return showTimes;
     }
 
+
     public void setShowTimes(Set<ShowTime> showTimes) {
         this.showTimes = showTimes;
     }
@@ -135,7 +136,9 @@ public class Theater {
     }
     @Override
     public String toString() {
+
         return theaterName;
     }
+
 
 }

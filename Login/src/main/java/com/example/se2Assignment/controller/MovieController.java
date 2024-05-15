@@ -24,6 +24,8 @@ public class MovieController {
     @Autowired
     private UserService userService;
     @Autowired
+    private TheaterService theaterService;
+    @Autowired
     UserDetailsService userDetailsService;
     @GetMapping("/movies")
     public String showMovieList(Model model) {
@@ -126,10 +128,13 @@ public class MovieController {
         }
     }
     @GetMapping("/movie-description/{id}/bookTheater/userShowTime")
-    public String showShowTimeToUser(@PathVariable("id") Long id, Model model, RedirectAttributes ra,Principal principal) {
+    public String showShowTimeToUser(@PathVariable("id") Long id, Model model,
+                                     RedirectAttributes ra,Principal principal)
+            throws TheaterNotFoundException {
         UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
         model.addAttribute("user", userDetails);
-        
+        Theater theater = theaterService.get(id);
+        model.addAttribute("theater", theater);
         return "showTimePage";
     }
 
