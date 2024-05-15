@@ -110,7 +110,7 @@
     <h1>Choose one showTime</h1>
     
     <ul class="showtime-list" >
-        <li th:each="time: ${theater.getShowTimes().toArray()}">
+        <li th:each="time: ${theater.getShowTimes()}">
             
             <a th:href="@{'/movie-description/1/bookTheater/userShowTime/bookSeat'}">
                 Showtime available: <span th:text="${time.getShowDateTime()}"></span>
