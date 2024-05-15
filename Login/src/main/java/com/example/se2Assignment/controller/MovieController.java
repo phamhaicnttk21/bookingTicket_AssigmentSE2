@@ -142,4 +142,21 @@ public class MovieController {
     public String bookSeatFun(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
         return "hello";
     }
+    @PostMapping("/movie-description/{id}/bookTheater/userShowTime/ticketSelection/process-ticket-selection")
+    public String processTicketSelection(@RequestParam("movieId") Long movieId,
+                                         @RequestParam("numTickets") int numTickets,
+                                         RedirectAttributes ra) {
+        try {
+            Movie movie = service.get(movieId);
+            double baseCost = movie.getBaseCost();
+            double totalCost = baseCost * numTickets;
+            ra.addFlashAttribute("movieName", movie.getMovieName());
+            ra.addFlashAttribute("totalCost", totalCost);
+            return "redirect:/ticket-confirmation"; // Redirect to the confirmation page
+        } catch (MovieNotFoundException e) {
+            ra.addFlashAttribute("message", e.getMessage());
+            return "redirect:/movies";
+        }
+                                    }    
+
 }

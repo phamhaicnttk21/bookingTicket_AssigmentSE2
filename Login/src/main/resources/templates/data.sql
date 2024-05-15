@@ -9,7 +9,7 @@ VALUES
 "1 hour", "3 stars"),
 
 ("8-year-old bride",
-"Drama, Slice-of-life",
+"Drama",
 "https://i.ytimg.com/vi/58fqhHTc5A8/maxresdefault.jpg",
 "100000", "Pratyusha Banerjee",
 "Due to poverty, Anandi had to marry Jadish, a son of a wealthy and nobel family to pay off her parents' debt.",
@@ -24,7 +24,7 @@ VALUES
 "2 hours 30 minutes" , "3 stars"),
 
 ("The Thing",
-"Action, Horror",
+"Classic",
 "https://m.media-amazon.com/images/M/MV5BNGViZWZmM2EtNGYzZi00ZDAyLTk3ODMtNzIyZTBjN2Y1NmM1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
 "225000",
 "Kurt Russell, Keith David, Donald Moffat",
@@ -32,7 +32,7 @@ VALUES
 "2 hours 35 minutes" , "5 stars"),
 
 ("The Thing 2: Prequel",
-"Action, Horror",
+"Romance",
 "https://m.media-amazon.com/images/M/MV5BMTMxMjI0MzUyNl5BMl5BanBnXkFtZTcwNjc1NzE5NQ@@._V1_QL75_UX190_CR0,0,190,281_.jpg",
 "220000",
 "Mary Elizabeth Winstead, Joel Edgerton, Ulrich Thomsen",
@@ -40,7 +40,7 @@ VALUES
 "2 hours 34 minutes" , "2 stars"),
 
 ("John Wick 3: Parabellum",
-"Action, Drama",
+"Kids",
 "https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_.jpg",
 "240000",
 "Keanu Reeves, Halle Berry, Ian McShane",
