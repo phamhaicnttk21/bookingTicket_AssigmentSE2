@@ -157,6 +157,5 @@ public class MovieController {
             ra.addFlashAttribute("message", e.getMessage());
             return "redirect:/movies";
         }
-                                    }    
-
+    }    
 }
