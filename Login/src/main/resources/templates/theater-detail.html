@@ -13,6 +13,7 @@
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
         }
         body{
             font-family: Arial, sans-serif;
@@ -47,6 +48,14 @@
         .header h1 {
             margin: 0;
         }
+        .picture{
+            max-width: 40%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .theater-info{
+            margin-left: 5%;
+        }
     </style> 
 </head>
 <body>
@@ -60,7 +69,11 @@
             <a th:href="@{/allTheaters}" class="navbar-link">Theaters</a>
         </div>
 
-        <div class="container">
+       
+    </div>
+    <div class="container">
+        <img th:src="${theater.imageUrl}" alt="${theater.theaterName}" class="picture">
+        <div class="theater-info">
             <h3 th:text="${theater.theaterName}"></h3>
             <p><strong>Address:</strong> <span th:text="${theater.address}"></span></p>
             <p><strong>Description:</strong> <span th:text="${theater.description}"></span></p>
@@ -68,10 +81,9 @@
             <p><strong>B-Section Seats:</strong> <span th:text="${theater.b_section}"></span></p>
             <p><strong>VIP-Section Seats:</strong> <span th:text="${theater.vip_section}"></span></p>
             <p><strong>Plus Cost:</strong> <span th:text="${theater.plusCost}"></span></p>
-
         </div>
-    </div>
 
+    </div>
     <!-- Bootstrap JS và jQuery (cần thiết cho các plugin JS của Bootstrap) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

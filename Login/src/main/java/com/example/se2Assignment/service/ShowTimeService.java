@@ -33,7 +33,4 @@ public class ShowTimeService {
         }
         throw new ShowTimeNotFoundException("Could not find any showTimes with ID " + id);
     }
-
-
-
-    }
+}

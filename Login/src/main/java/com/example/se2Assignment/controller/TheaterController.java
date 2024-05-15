@@ -29,7 +29,7 @@ public class TheaterController {
     @GetMapping("/theaters")
     public String showTheaterList(Model model,RedirectAttributes ra) {
         List<Theater> listTheaters = service.listAll();
-        ra.addFlashAttribute("message", "The theater has been delete successfully.");
+       
         model.addAttribute("listTheaters", listTheaters);
         return "Theaters";
     }
@@ -80,9 +80,7 @@ public class TheaterController {
     }
 
     @GetMapping("/theaterDetail")
-
-    public String showTheaterDetail(@RequestParam("id") Long theaterId, Model model, Principal principal) throws TheaterNotFoundException {
-
+    public String showTheaterDetail(@RequestParam("id") Long theaterId, Model model,Principal principal) throws TheaterNotFoundException {
         UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
         model.addAttribute("user", userDetails);
         Theater theater = service.get(theaterId);
