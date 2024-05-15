@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ae34029-90ba-4527-853f-821da80eec98" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/static/images/Kids.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/static/images/Romance.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/seatBooking.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/ticket-confirmation.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/ticket-selection.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/static/images/Tam ly xa hoi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +26,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Se2AssignmentApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/CHIEN/Documents/Code_Movie_Final/bookingTicket_AssigmentSE2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Se2AssignmentApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/CHIEN/Documents/Code_loi_git/bookingTicket_AssigmentSE2"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Se2AssignmentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.se2Assignment.Se2AssignmentApplication" />
@@ -59,5 +54,23 @@
         <item itemvalue="Application.Se2AssignmentApplication" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6ae34029-90ba-4527-853f-821da80eec98" name="Changes" comment="" />
+      <created>1715769059118</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715769059118</updated>
+    </task>
+    <servers />
   </component>
 </project>

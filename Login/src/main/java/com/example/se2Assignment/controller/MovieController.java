@@ -140,9 +140,44 @@ public class MovieController {
 
     @GetMapping("/movie-description/{id}/bookTheater/userShowTime/bookSeat")
     public String bookSeatFun(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
-        return "hello";
+        return "seatBooking";
     }
-    @PostMapping("/movie-description/{id}/bookTheater/userShowTime/ticketSelection/process-ticket-selection")
+    @GetMapping("/movie-description/{movieId}/bookTheater/userShowTime/bookSeat/ticketSelection")
+    public String bookSeatFun(@PathVariable("movieId") Long movieId,
+                              @RequestParam("theaterId") Long theaterId,
+                              Model model) {
+        try {
+            // Fetch movie and theater details
+            Movie movie = service.get(movieId);
+            Theater theater = theaterService.get(theaterId);
+
+            // Log the retrieved movie and theater details
+            System.out.println("Retrieved Movie: " + movie);
+            System.out.println("Retrieved Theater: " + theater);
+
+            // Add attributes to the model
+            model.addAttribute("movie", movie);
+            model.addAttribute("theater", theater);
+            return "ticket-selection"; // Ensure this template exists in your templates
+
+        } catch (MovieNotFoundException | TheaterNotFoundException e) {
+            // Log the exception
+            e.printStackTrace();
+            // Add error attribute to the model
+            model.addAttribute("error", "Could not find movie or theater");
+            // Redirect to a simple error page
+            return "error-page"; // Ensure this error page exists in your templates
+        } catch (Exception e) {
+            // Log the exception
+            e.printStackTrace();
+            // Add error attribute to the model
+            model.addAttribute("error", "An unexpected error occurred");
+            // Redirect to a simple error page
+            return "error-page"; // Ensure this error page exists in your templates
+        }
+
+    }
+    @PostMapping("/movie-description/{id}/bookTheater/userShowTime/bookSeat/ticketSelection/process-ticket-selection")
     public String processTicketSelection(@RequestParam("movieId") Long movieId,
                                          @RequestParam("numTickets") int numTickets,
                                          RedirectAttributes ra) {
