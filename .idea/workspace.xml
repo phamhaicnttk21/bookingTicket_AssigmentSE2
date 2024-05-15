@@ -5,14 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ac9e6a0-07b2-4af2-aadc-8fe6e6fa1e8c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/film-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/film-category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/movie-description.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/movie-description.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/movie-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/movie-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/search-results.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/search-results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/theater-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/theater-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/toanBoTheaters.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/templates/toanBoTheaters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/com/example/se2Assignment/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/admin-template/Movies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/admin-template/ShowTime-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/admin-template/Theaters.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/admin-template/admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/admin-template/movie_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/admin-template/theater_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user-template/allShowTimes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user-template/film-category.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user-template/movie-description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user-template/movie-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user-template/payment-page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user-template/search-results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user-template/showTimePage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user-template/theater-detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user-template/theater_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user-template/toanBoTheaters.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/user-template/user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/utils/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/utils/hello.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/utils/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/templates/utils/register.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

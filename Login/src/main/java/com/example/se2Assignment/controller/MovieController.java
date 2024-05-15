@@ -112,11 +112,13 @@ public class MovieController {
         }
     }
     @GetMapping("/movie-description/{id}/bookTheater")
-    public String bookTicket(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+    public String bookTicket(@PathVariable("id") Long id, Model model, RedirectAttributes ra,Principal principal) {
         try {
             Movie movie = service.get(id);
             Set<Theater> theaters = movie.getTheaters();
             model.addAttribute("theaters", theaters);
+            UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
+            model.addAttribute("user", userDetails);
              return "theater_list";
         } catch (MovieNotFoundException e) {
             ra.addFlashAttribute("message", e.getMessage());
@@ -124,7 +126,10 @@ public class MovieController {
         }
     }
     @GetMapping("/movie-description/{id}/bookTheater/userShowTime")
-    public String showShowTimeToUser(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+    public String showShowTimeToUser(@PathVariable("id") Long id, Model model, RedirectAttributes ra,Principal principal) {
+        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
+        model.addAttribute("user", userDetails);
+        
         return "showTimePage";
     }
 
