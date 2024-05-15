@@ -123,4 +123,58 @@ public class MovieController {
             return "redirect:/movies";
         }
     }
+    @GetMapping("/movie-description/{id}/bookTheater/userShowTime")
+    public String showShowTimeToUser(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+        return "showTimePage";
+    }
+
+    @GetMapping("/movie-description/{id}/bookTheater/userShowTime/bookSeat")
+    public String bookSeatFun(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+        return "seatBooking";
+    }
+
+
+    @GetMapping("/movie-description/{id}/bookTheater/userShowTime/ticketSelection")
+    public String ticketSelection() {
+       return "hello";
+    }
+
+
+
+
+    @GetMapping("/ticket-confirmation")
+    public String showTicketConfirmation(Model model, RedirectAttributes ra) {
+        // Retrieve flash attributes
+        String movieName = (String) ra.getFlashAttributes().get("movieName");
+        Double totalCost = (Double) ra.getFlashAttributes().get("totalCost");
+
+        // Pass data to the view
+        model.addAttribute("movieName", movieName);
+        model.addAttribute("totalCost", totalCost);
+
+        // Return the name of the view/template
+        return "ticket-confirmation";
+    }
+
+
+    @PostMapping("/movie-description/{id}/bookTheater/userShowTime/ticketSelection/process-ticket-selection")
+    public String processTicketSelection(@RequestParam("movieId") Long movieId,
+                                         @RequestParam("numTickets") int numTickets,
+                                         RedirectAttributes ra) {
+        try {
+            Movie movie = service.get(movieId);
+            double baseCost = movie.getBaseCost();
+            double totalCost = baseCost * numTickets;
+            ra.addFlashAttribute("movieName", movie.getMovieName());
+            ra.addFlashAttribute("totalCost", totalCost);
+            return "redirect:/ticket-confirmation"; // Redirect to the confirmation page
+        } catch (MovieNotFoundException e) {
+            ra.addFlashAttribute("message", e.getMessage());
+            return "redirect:/movies";
+        }
+
+
+    }
+
+
 }
